@@ -4,6 +4,7 @@ import styles from '../../assets/styles/signup.styles'
 import COLORS from '@/constants/colors'
 import { Ionicons } from '@expo/vector-icons'
 import { Link, useRouter } from 'expo-router'
+import { useAuthStore } from '../../store/authStore'
 
 export default function Signup() {
 
@@ -11,12 +12,13 @@ export default function Signup() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
-    const [isLoading, setIsLoading] = useState(false)
+
+    const { user, isLoading, register } = useAuthStore()
 
     const router = useRouter()
 
     const handleSignup = () => {
-
+        sayHello()
     }
 
     return (
